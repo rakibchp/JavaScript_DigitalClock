@@ -6,11 +6,11 @@ function digitalClock(){
     let seconds = date.getSeconds();
     let clockFormat = 'AM';
 
-    if(hours == 0){
+    if(hours === 0){
         hours =12;
     }
     else if(hours > 12){
-        hours = hours -12;
+        hours = hours - 12;
         clockFormat = 'PM';
     }
     hours = hours < 10 ? '0' + hours : hours;
@@ -18,7 +18,7 @@ function digitalClock(){
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
     let finalTime = `${hours}:${minutes}:${seconds}`;
-    document.querySelector('#time').innerText = finalTime;
+    document.getElementById('time').innerText = finalTime;
     document.querySelector('small').innerText = clockFormat;
 
     setInterval(digitalClock, 1000);
